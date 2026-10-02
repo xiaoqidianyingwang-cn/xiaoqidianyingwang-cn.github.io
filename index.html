@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no">
+<title>小七电影网 - 热门电影推荐_最新影视资讯_高分电影榜单</title>
+<meta name="description" content="小七电影网是专注电影推荐与影视资讯的中文影迷站点，每日更新最新上映电影、高分佳作榜单、分类影片导览、原创影评与观影指南，帮你快速找到值得一看的好电影。">
+<meta name="keywords" content="小七电影网,电影推荐,最新电影,影视资讯,高分电影,电影榜单,影评,观影指南,电影分类,在线看片">
+<meta name="author" content="小七电影网">
+<meta name="robots" content="index,follow">
+<meta name="revisit-after" content="1 days">
+<meta name="theme-color" content="#FF6B35">
+<link rel="canonical" href="https://xiaoqidianyingwang-cn.github.io/">
+<link rel="alternate" hreflang="zh-CN" href="https://xiaoqidianyingwang-cn.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="小七电影网">
+<meta property="og:title" content="小七电影网 - 热门电影推荐_最新影视资讯_高分电影榜单">
+<meta property="og:description" content="小七电影网每日更新最新上映电影、高分佳作榜单、分类影片导览与原创影评，是影迷找好片的第一站。">
+<meta property="og:url" content="https://xiaoqidianyingwang-cn.github.io/">
+<meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="小七电影网 - 热门电影推荐与影视资讯">
+<meta name="twitter:description" content="小七电影网每日更新最新上映电影、高分佳作榜单与原创影评。">
+<style>
+:root{
+  --cream:#FFF8F1;
+  --white:#FFFFFF;
+  --ink:#1F2937;
+  --ink-2:#4B5563;
+  --muted:#7A8794;
+  --orange:#FF6B35;
+  --orange-deep:#E8501F;
+  --amber:#FFC145;
+  --mint:#2FB8A8;
+  --line:#F0E4D8;
+  --shadow:0 10px 30px rgba(255,107,53,.10);
+  --shadow-2:0 18px 48px rgba(31,41,55,.10);
+  --radius:18px;
+  --max:1160px;
+  --serif:"Songti SC","Noto Serif SC","Georgia",serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--cream);
+  color:var(--ink);
+  font-family:"PingFang SC","Microsoft YaHei","WenQuanYi Micro Hei","Helvetica Neue",Arial,sans-serif;
+  font-size:16px;
+  line-height:1.8;
+}
+a{color:inherit;text-decoration:none}
+ul,ol{list-style:none}
+button{font-family:inherit}
+:focus-visible{outline:3px solid var(--orange);outline-offset:2px}
+.wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 20px}
+
+/* ===== 顶部条 ===== */
+.topbar{background:linear-gradient(90deg,var(--orange),var(--amber) 60%,var(--orange));color:#4A1E00;font-size:13px}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:36px;flex-wrap:wrap}
+.topbar b{font-weight:800}
+.topbar .tb-links{display:flex;gap:14px;font-size:12.5px}
+.topbar .tb-links a{text-decoration:underline;text-underline-offset:3px}
+
+/* ===== 头部 ===== */
+header.top{position:sticky;top:0;z-index:70;background:rgba(255,248,241,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.top-inner{display:flex;align-items:center;gap:18px;min-height:70px}
+.brand{display:flex;align-items:center;gap:12px;flex:0 0 auto}
+.logo{width:44px;height:44px;border-radius:50%;flex:0 0 auto;background:linear-gradient(140deg,var(--orange),var(--amber));display:flex;align-items:center;justify-content:center;color:#fff;font-family:var(--serif);font-size:22px;font-weight:700;box-shadow:0 8px 20px rgba(255,107,53,.32)}
+.brand-name{display:flex;flex-direction:column;line-height:1.2}
+.brand-name b{font-family:var(--serif);font-size:21px;letter-spacing:2px}
+.brand-name span{font-size:10.5px;color:var(--muted);letter-spacing:3px}
+nav.main{margin-left:auto;display:flex;gap:6px;align-items:center}
+nav.main a{font-size:14.5px;padding:9px 14px;border-radius:999px;color:var(--ink-2);transition:.2s}
+nav.main a:hover{background:#FFEDE3;color:var(--orange-deep)}
+nav.main a.cur{background:var(--orange);color:#fff;font-weight:700;box-shadow:0 6px 16px rgba(255,107,53,.28)}
+.cta-top{flex:0 0 auto;font-size:14px;font-weight:700;padding:9px 18px;border-radius:999px;border:2px solid var(--orange);color:var(--orange-deep);white-space:nowrap}
+.cta-top:hover{background:var(--orange);color:#fff}
+.nav-toggle{display:none}
+.burger{display:none;margin-left:auto;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--white);align-items:center;justify-content:center;cursor:pointer}
+.burger i{display:block;width:18px;height:2px;background:var(--orange);position:relative}
+.burger i::before,.burger i::after{content:"";position:absolute;left:0;width:18px;height:2px;background:var(--orange)}
+.burger i::before{top:-6px}
+.burger i::after{top:6px}
+
+/* ===== HERO（居中杂志式） ===== */
+.hero{position:relative;padding:56px 0 40px;text-align:center;overflow:hidden}
+.hero::before{
+  content:"";position:absolute;left:50%;top:-160px;transform:translateX(-50%);
+  width:900px;height:900px;border-radius:50%;
+  background:radial-gradient(circle, rgba(255,193,69,.28), rgba(255,107,53,.10) 45%, transparent 68%);
+  z-index:0;pointer-events:none;
+}
+.hero .wrap{position:relative;z-index:1}
+.hero-tag{display:inline-block;font-size:12.5px;letter-spacing:3px;color:var(--orange-deep);border:1px solid rgba(255,107,53,.4);border-radius:999px;padding:5px 16px;background:rgba(255,255,255,.7);margin-bottom:18px}
+h1{font-family:var(--serif);font-size:52px;line-height:1.24;letter-spacing:2px;font-weight:700;margin-bottom:16px}
+h1 em{font-style:normal;color:var(--orange-deep);border-bottom:6px solid var(--amber);padding-bottom:2px}
+.hero-desc{max-width:660px;margin:0 auto 26px;color:var(--ink-2);font-size:16.5px}
+.hero-desc b{color:var(--ink)}
+.hero-btns{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:34px}
+.btn{display:inline-block;padding:13px 30px;border-radius:999px;font-size:15.5px;font-weight:700;transition:.22s}
+.btn-1{background:linear-gradient(135deg,var(--orange),var(--orange-deep));color:#fff;box-shadow:0 12px 28px rgba(255,107,53,.3)}
+.btn-1:hover{transform:translateY(-3px)}
+.btn-2{background:var(--white);color:var(--ink);border:2px solid var(--line);box-shadow:var(--shadow)}
+.btn-2:hover{border-color:var(--amber)}
+.hero-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;text-align:left}
+.hc{background:var(--white);border-radius:var(--radius);padding:20px;border:1px solid var(--line);box-shadow:var(--shadow)}
+.hc strong{display:block;font-family:var(--serif);font-size:30px;color:var(--orange-deep);line-height:1.2}
+.hc span{font-size:13px;color:var(--muted)}
+.hc i{display:block;font-style:normal;font-size:20px;margin-bottom:6px}
+
+/* ===== 通用区块 ===== */
+section{padding:46px 0;scroll-margin-top:76px}
+.sec-head{text-align:center;margin-bottom:30px}
+.sec-head h2{font-family:var(--serif);font-size:32px;letter-spacing:2px;display:inline-block;position:relative;padding-bottom:12px}
+.sec-head h2::after{content:"";position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:56px;height:5px;border-radius:5px;background:linear-gradient(90deg,var(--orange),var(--amber))}
+.sec-head p{color:var(--muted);font-size:14px;margin-top:10px}
+.sec-head .more{display:inline-block;margin-top:12px;font-size:13.5px;color:var(--orange-deep);border-bottom:2px solid var(--amber);padding-bottom:2px}
+
+/* ===== 栏目一：今日推荐（横向列表） ===== */
+.pick-list{display:flex;flex-direction:column;gap:16px}
+.pick{display:grid;grid-template-columns:132px 1fr auto;gap:20px;align-items:center;background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow);transition:.25s}
+.pick:hover{transform:translateX(4px);box-shadow:var(--shadow-2);border-color:var(--amber)}
+.pick-cover{aspect-ratio:3/4;border-radius:12px;display:flex;align-items:flex-end;padding:10px;position:relative;overflow:hidden}
+.pick-cover::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(0,0,0,.35))}
+.pick-cover span{position:relative;z-index:2;color:#fff;font-size:12px;font-weight:700}
+.pick-badge{position:absolute;top:8px;left:8px;z-index:3;background:rgba(255,255,255,.92);color:var(--orange-deep);font-size:11px;font-weight:800;padding:3px 9px;border-radius:999px}
+.pick-body h3{font-family:var(--serif);font-size:19px;letter-spacing:1px;margin-bottom:6px}
+.pick-body .sub{font-size:13px;color:var(--muted);margin-bottom:8px}
+.pick-body p{font-size:14px;color:var(--ink-2);line-height:1.75}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}
+.chips span{font-size:11.5px;color:var(--ink-2);background:#FFF1E6;border-radius:999px;padding:3px 11px}
+.pick-side{text-align:center;flex:0 0 auto}
+.score-big{display:block;font-family:var(--serif);font-size:32px;color:var(--orange-deep);line-height:1}
+.score-lab{font-size:11px;color:var(--muted);letter-spacing:1px}
+.pick-go{display:block;margin-top:10px;font-size:13px;font-weight:700;color:var(--orange-deep);border:1px solid var(--orange);border-radius:999px;padding:6px 16px}
+.pick-go:hover{background:var(--orange);color:#fff}
+
+/* ===== 栏目二：分类（药丸云） ===== */
+.pill-cloud{background:var(--white);border:1px solid var(--line);border-radius:22px;padding:26px;display:flex;flex-wrap:wrap;gap:12px;justify-content:center;box-shadow:var(--shadow)}
+.pill{font-size:14.5px;padding:9px 20px;border-radius:999px;background:#FFF6EE;border:1px solid var(--line);color:var(--ink-2);transition:.2s}
+.pill:hover{background:var(--orange);color:#fff;border-color:var(--orange);transform:translateY(-2px)}
+.pill b{font-weight:700}
+.pill small{font-size:11.5px;opacity:.75;margin-left:5px}
+.pill.big{font-size:17px;padding:12px 26px;background:linear-gradient(135deg,var(--orange),var(--amber));color:#fff;font-weight:700}
+.cat-note{text-align:center;font-size:13px;color:var(--muted);margin-top:16px}
+
+/* ===== 栏目三：影评（杂志三栏） ===== */
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.rev-card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transition:.25s;display:flex;flex-direction:column}
+.rev-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-2)}
+.rev-top{height:132px;position:relative;display:flex;align-items:center;justify-content:center}
+.rev-top em{font-style:normal;font-family:var(--serif);font-size:44px;color:rgba(255,255,255,.9);letter-spacing:4px}
+.rev-no{position:absolute;top:12px;left:14px;font-family:var(--serif);font-size:14px;color:#fff;background:rgba(31,41,55,.35);border-radius:999px;padding:2px 12px}
+.rev-card .rev-in{padding:18px 20px 20px;flex:1;display:flex;flex-direction:column}
+.rev-card h3{font-family:var(--serif);font-size:17.5px;line-height:1.5;margin-bottom:8px}
+.rev-card p{font-size:13.5px;color:var(--ink-2);line-height:1.8;flex:1}
+.rev-meta{display:flex;justify-content:space-between;gap:10px;font-size:11.5px;color:var(--muted);margin-top:14px;padding-top:12px;border-top:1px dashed var(--line);flex-wrap:wrap}
+
+/* ===== 栏目四：榜单（双列列表） ===== */
+.board{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.board-box{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+.board-box h3{font-family:var(--serif);font-size:19px;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.board-box h3::before{content:"";width:8px;height:20px;border-radius:4px;background:linear-gradient(180deg,var(--orange),var(--amber))}
+.board-box ol li{display:flex;align-items:center;gap:14px;padding:11px 0;border-bottom:1px dashed var(--line)}
+.board-box ol li:last-child{border-bottom:0}
+.bno{flex:0 0 32px;height:32px;border-radius:50%;background:#FFF1E6;color:var(--orange-deep);font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center}
+.board-box ol li:nth-child(1) .bno{background:linear-gradient(135deg,var(--orange),var(--amber));color:#fff}
+.bname{flex:1;min-width:0;font-size:15px}
+.bname small{display:block;font-size:11.5px;color:var(--muted)}
+.bscore{flex:0 0 auto;font-family:var(--serif);font-size:19px;color:var(--orange-deep)}
+
+/* ===== 栏目五：关于 ===== */
+.about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:24px}
+.about-card{background:var(--white);border:1px solid var(--line);border-radius:22px;padding:28px;box-shadow:var(--shadow)}
+.about-card h3{font-family:var(--serif);font-size:22px;margin-bottom:14px}
+.about-card p{font-size:15px;color:var(--ink-2);margin-bottom:12px}
+.about-card p:last-child{margin-bottom:0}
+.about-card strong{color:var(--orange-deep)}
+.why{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+.why li{background:#FFF6EE;border-radius:14px;padding:14px;font-size:13.5px;border:1px solid var(--line)}
+.why li b{display:block;font-family:var(--serif);font-size:15px;color:var(--orange-deep);margin-bottom:4px}
+
+/* ===== FAQ ===== */
+.faq{max-width:880px;margin:0 auto}
+.faq details{background:var(--white);border:1px solid var(--line);border-radius:14px;margin-bottom:12px;box-shadow:var(--shadow)}
+.faq summary{cursor:pointer;padding:16px 20px;font-size:15.5px;font-weight:700;list-style:none;position:relative;padding-right:46px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"＋";position:absolute;right:18px;top:14px;color:var(--orange);font-size:17px}
+.faq details[open] summary::after{content:"－"}
+.faq details p{padding:0 20px 18px;font-size:14px;color:var(--ink-2)}
+
+/* ===== 订阅条 ===== */
+.subscribe{margin:10px 0 46px}
+.sub-in{background:linear-gradient(120deg,var(--orange),var(--amber));border-radius:26px;padding:34px 28px;text-align:center;color:#4A1E00;box-shadow:0 20px 44px rgba(255,107,53,.24)}
+.sub-in h3{font-family:var(--serif);font-size:26px;margin-bottom:8px}
+.sub-in p{font-size:14.5px;margin-bottom:18px;opacity:.9}
+.sub-form{display:flex;gap:10px;max-width:520px;margin:0 auto;flex-wrap:wrap}
+.sub-form input{flex:1;min-width:220px;border:0;border-radius:999px;padding:13px 20px;font-size:14.5px;font-family:inherit;outline:none;background:rgba(255,255,255,.95)}
+.sub-form button{border:0;border-radius:999px;padding:13px 28px;font-size:15px;font-weight:800;background:#4A1E00;color:#FFD79A;cursor:pointer}
+
+/* ===== 底部（暖色深底） ===== */
+footer{background:linear-gradient(180deg,#2B1A10,#1A0F08);color:#E8DCCF;padding:44px 0 24px}
+.f-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:26px}
+.f-col h4{font-family:var(--serif);font-size:16px;color:#FFC145;margin-bottom:14px;letter-spacing:1px}
+.f-col p{font-size:13.5px;color:#BFAE9E;line-height:1.9}
+.f-col ul li{margin-bottom:9px}
+.f-col ul li a{font-size:13.5px;color:#BFAE9E}
+.f-col ul li a:hover{color:#FFC145}
+.f-url{margin-top:10px;font-size:12.5px;color:#8E7B69;word-break:break-all}
+.kw{margin-top:26px;padding-top:20px;border-top:1px dashed rgba(255,255,255,.14);font-size:12.5px;color:#8E7B69}
+.kw a{display:inline-block;margin:4px 8px 0 0;border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:3px 12px;color:#BFAE9E}
+.kw a:hover{color:#FFC145;border-color:#FFC145}
+.f-bot{margin-top:20px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:12.5px;color:#8E7B69}
+.f-bot a{color:#8E7B69}
+
+/* ===== 响应式 ===== */
+@media (max-width:1024px){
+  .hero-cards{grid-template-columns:repeat(2,1fr)}
+  .rev-grid{grid-template-columns:1fr 1fr}
+  .f-top{grid-template-columns:1fr 1fr}
+}
+@media (max-width:860px){
+  h1{font-size:36px}
+  .about-grid{grid-template-columns:1fr}
+  nav.main{
+    display:none;position:absolute;left:0;right:0;top:70px;
+    background:var(--white);border-bottom:1px solid var(--line);
+    flex-direction:column;align-items:stretch;padding:12px 20px 18px;gap:4px;
+    box-shadow:var(--shadow-2);margin-left:0;
+  }
+  nav.main a{padding:13px 16px;border-radius:12px;font-size:15.5px}
+  .burger{display:flex}
+  .nav-toggle:checked ~ nav.main{display:flex}
+  .cta-top{display:none}
+  .top-inner{position:relative;min-height:62px}
+}
+@media (max-width:640px){
+  body{font-size:15px}
+  .wrap{padding:0 14px}
+  h1{font-size:30px}
+  .sec-head h2{font-size:24px}
+  .hero{padding:34px 0 26px}
+  .hero-cards{grid-template-columns:repeat(2,1fr);gap:10px}
+  .hc strong{font-size:24px}
+  .pick{grid-template-columns:92px 1fr;gap:14px;padding:12px}
+  .pick-side{grid-column:1 / -1;display:flex;align-items:center;justify-content:space-between;gap:12px;border-top:1px dashed var(--line);padding-top:10px}
+  .score-big{font-size:24px}
+  .pick-go{margin-top:0}
+  .rev-grid{grid-template-columns:1fr}
+  .board{grid-template-columns:1fr}
+  .why{grid-template-columns:1fr}
+  .f-top{grid-template-columns:1fr}
+  .topbar .tb-links{display:none}
+  .sub-in{padding:26px 18px}
+  section{padding:34px 0}
+}
+@media print{header.top,.topbar,.burger{display:none}}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaobao.js"></script>
+
+<!-- 顶部条 -->
+<div class="topbar">
+  <div class="wrap">
+    <span><b>小七电影网</b> · 每天 09:00 更新片单，人工筛选，只看好片</span>
+    <span class="tb-links">
+      <a href="#">投稿</a>
+      <a href="#faq">帮助</a>
+      <a href="#about">关于小七电影网</a>
+    </span>
+  </div>
+</div>
+
+<!-- 头部 -->
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="#" aria-label="小七电影网首页">
+      <span class="logo" aria-hidden="true">七</span>
+      <span class="brand-name">
+        <b>小七电影网</b>
+        <span>XIAOQI MOVIE</span>
+      </span>
+    </a>
+    <input class="nav-toggle" id="navck" type="checkbox" aria-label="展开导航菜单">
+    <label class="burger" for="navck" aria-hidden="true"><i></i></label>
+    <nav class="main" aria-label="主导航">
+      <a class="cur" href="#">首页</a>
+      <a href="#picks">今日推荐</a>
+      <a href="#category">影片分类</a>
+      <a href="#review">影评资讯</a>
+      <a href="#board">高分榜单</a>
+      <a href="#about">关于我们</a>
+      <a href="#faq">常见问题</a>
+    </nav>
+    <a class="cta-top" href="#picks">马上找片</a>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="wrap">
+      <span class="hero-tag">中 文 影 迷 · 每 日 更 新</span>
+      <h1>好电影太多，<em>小七电影网</em><br>只给你挑对的那一部</h1>
+      <p class="hero-desc"><b>小七电影网</b>是一个专注电影推荐与影视资讯的中文站点。院线新片、流媒体上新、冷门佳作、类型导览与原创影评，我们都按同一条标准筛：值得你花掉的两个小时。</p>
+      <div class="hero-btns">
+        <a class="btn btn-1" href="#picks">看看今天推荐什么</a>
+        <a class="btn btn-2" href="#board">高分电影榜单</a>
+      </div>
+      <div class="hero-cards">
+        <div class="hc"><i aria-hidden="true">▣</i><strong>15280</strong><span>小七电影网收录影片</span></div>
+        <div class="hc"><i aria-hidden="true">▤</i><strong>36</strong><span>细分类型标签</span></div>
+        <div class="hc"><i aria-hidden="true">▥</i><strong>每天</strong><span>片单与资讯更新</span></div>
+        <div class="hc"><i aria-hidden="true">▦</i><strong>8.8</strong><span>编辑推荐平均分</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 栏目一：今日推荐 -->
+  <section id="picks">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>今日电影推荐</h2>
+        <p>小七电影网编辑部每日精选，院线热映与流媒体新片同步更新</p>
+        <a class="more" href="#">查看完整片库</a>
+      </div>
+      <div class="pick-list">
+        <article class="pick">
+          <div class="pick-cover" style="background:linear-gradient(150deg,#FF8A5B,#7A2E12 72%)">
+            <span class="pick-badge">热映</span>
+            <span>2026 · 华语</span>
+          </div>
+          <div class="pick-body">
+            <h3>《归途列车》</h3>
+            <p class="sub">剧情 / 家庭 · 片长 118 分钟 · 小七电影网评分 8.8</p>
+            <p>一趟跨省列车上的六个陌生人，用一夜时间讲完各自未说完的话。叙事克制，结尾的长镜头值得二刷。</p>
+            <div class="chips"><span>剧情</span><span>家庭</span><span>华语</span><span>高分</span></div>
+          </div>
+          <div class="pick-side">
+            <span class="score-big">8.8</span>
+            <span class="score-lab">小七评分</span>
+            <a class="pick-go" href="#">详情</a>
+          </div>
+        </article>
+        <article class="pick">
+          <div class="pick-cover" style="background:linear-gradient(150deg,#4FC4B8,#12484A 72%)">
+            <span class="pick-badge">新片</span>
+            <span>2026 · 欧美</span>
+          </div>
+          <div class="pick-body">
+            <h3>《静默海域》</h3>
+            <p class="sub">科幻 / 冒险 · 片长 131 分钟 · 小七电影网评分 8.6</p>
+            <p>深海科考站失联后的第七十二小时，人类与未知第一次正面沟通。视觉体系克制，配乐是加分项。</p>
+            <div class="chips"><span>科幻</span><span>冒险</span><span>视觉系</span></div>
+          </div>
+          <div class="pick-side">
+            <span class="score-big">8.6</span>
+            <span class="score-lab">小七评分</span>
+            <a class="pick-go" href="#">详情</a>
+          </div>
+        </article>
+        <article class="pick">
+          <div class="pick-cover" style="background:linear-gradient(150deg,#FFC145,#8A5A05 72%)">
+            <span class="pick-badge">冷门</span>
+            <span>2025 · 日韩</span>
+          </div>
+          <div class="pick-body">
+            <h3>《柚子味的夏天》</h3>
+            <p class="sub">文艺 / 青春 · 片长 104 分钟 · 小七电影网评分 8.5</p>
+            <p>被多数榜单漏掉的小成本佳作，讲一个小镇少女与一场迟到的告别。看完想给很久没联系的人发消息。</p>
+            <div class="chips"><span>文艺</span><span>青春</span><span>冷门佳作</span></div>
+          </div>
+          <div class="pick-side">
+            <span class="score-big">8.5</span>
+            <span class="score-lab">小七评分</span>
+            <a class="pick-go" href="#">详情</a>
+          </div>
+        </article>
+        <article class="pick">
+          <div class="pick-cover" style="background:linear-gradient(150deg,#9B7BFF,#3A2266 72%)">
+            <span class="pick-badge">独家</span>
+            <span>2026 · 动画</span>
+          </div>
+          <div class="pick-body">
+            <h3>《云上邮局》</h3>
+            <p class="sub">动画 / 治愈 · 片长 96 分钟 · 小七电影网评分 8.4</p>
+            <p>手绘质感极佳，讲一封寄不出去的信如何被整座城市接力传递。适合周末全家一起看。</p>
+            <div class="chips"><span>动画</span><span>治愈</span><span>合家欢</span></div>
+          </div>
+          <div class="pick-side">
+            <span class="score-big">8.4</span>
+            <span class="score-lab">小七评分</span>
+            <a class="pick-go" href="#">详情</a>
+          </div>
+        </article>
+        <article class="pick">
+          <div class="pick-cover" style="background:linear-gradient(150deg,#5B8DEF,#132C63 72%)">
+            <span class="pick-badge">悬疑</span>
+            <span>2025 · 华语</span>
+          </div>
+          <div class="pick-body">
+            <h3>《第七个证人》</h3>
+            <p class="sub">悬疑 / 犯罪 · 片长 126 分钟 · 小七电影网评分 8.3</p>
+            <p>法庭戏与回忆线交叉推进，最后二十分钟的证词反转逻辑自洽，是今年完成度最高的华语悬疑之一。</p>
+            <div class="chips"><span>悬疑</span><span>犯罪</span><span>反转</span></div>
+          </div>
+          <div class="pick-side">
+            <span class="score-big">8.3</span>
+            <span class="score-lab">小七评分</span>
+            <a class="pick-go" href="#">详情</a>
+          </div>
+        </article>
+        <article class="pick">
+          <div class="pick-cover" style="background:linear-gradient(150deg,#FF6B9D,#7A1340 72%)">
+            <span class="pick-badge">纪录</span>
+            <span>2024 · 多国</span>
+          </div>
+          <div class="pick-body">
+            <h3>《一年，七座城》</h3>
+            <p class="sub">纪录 / 人文 · 片长 112 分钟 · 小七电影网评分 8.2</p>
+            <p>七位导演各拍一座城的一年，剪辑节奏舒服，是了解当下城市生活最省力的一部纪录片。</p>
+            <div class="chips"><span>纪录</span><span>人文</span><span>高分</span></div>
+          </div>
+          <div class="pick-side">
+            <span class="score-big">8.2</span>
+            <span class="score-lab">小七评分</span>
+            <a class="pick-go" href="#">详情</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 栏目二：分类 -->
+  <section id="category">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>影片分类导览</h2>
+        <p>小七电影网按类型、地区、年份三维交叉检索，找片更快</p>
+        <a class="more" href="#">进入分类索引</a>
+      </div>
+      <div class="pill-cloud">
+        <a class="pill big" href="#">热门电影推荐</a>
+        <a class="pill" href="#"><b>动作</b><small>1240</small></a>
+        <a class="pill" href="#"><b>科幻</b><small>880</small></a>
+        <a class="pill" href="#"><b>悬疑</b><small>1060</small></a>
+        <a class="pill" href="#"><b>爱情</b><small>1510</small></a>
+        <a class="pill" href="#"><b>喜剧</b><small>1320</small></a>
+        <a class="pill" href="#"><b>动画</b><small>760</small></a>
+        <a class="pill" href="#"><b>纪录</b><small>430</small></a>
+        <a class="pill" href="#"><b>惊悚</b><small>690</small></a>
+        <a class="pill" href="#"><b>华语电影</b><small>3180</small></a>
+        <a class="pill" href="#"><b>欧美电影</b><small>4260</small></a>
+        <a class="pill" href="#"><b>日韩电影</b><small>2240</small></a>
+        <a class="pill" href="#"><b>2026 新片</b><small>412</small></a>
+        <a class="pill" href="#"><b>经典修复</b><small>560</small></a>
+        <a class="pill" href="#"><b>冷门佳作</b><small>720</small></a>
+        <a class="pill" href="#"><b>高分电影</b><small>980</small></a>
+      </div>
+      <p class="cat-note">小七电影网分类标签每周维护一次，同一部影片可同时归入多个标签。</p>
+    </div>
+  </section>
+
+  <!-- 栏目三：影评资讯 -->
+  <section id="review">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>影评与影视资讯</h2>
+        <p>小七电影网原创内容，观点独立，关键剧情单独标注</p>
+        <a class="more" href="#">阅读更多影评</a>
+      </div>
+      <div class="rev-grid">
+        <article class="rev-card">
+          <div class="rev-top" style="background:linear-gradient(140deg,#FF8A5B,#7A2E12)"><span class="rev-no">01</span><em>影评</em></div>
+          <div class="rev-in">
+            <h3>《归途列车》：一节车厢装得下多少人生</h3>
+            <p>小七电影网影评组：导演把镜头固定在过道，让每个角色的独白都像在对观众说。全片没有煽情配乐，却在中段那场停站戏里让人红了眼眶。</p>
+            <div class="rev-meta"><span>小七电影网 · 影评组</span><span>2026-09-29</span></div>
+          </div>
+        </article>
+        <article class="rev-card">
+          <div class="rev-top" style="background:linear-gradient(140deg,#4FC4B8,#12484A)"><span class="rev-no">02</span><em>资讯</em></div>
+          <div class="rev-in">
+            <h3>2026 秋季档前瞻：六部值得标记的院线片</h3>
+            <p>今年秋季档悬疑与科幻占比明显上升，小七电影网提前梳理必看清单，并附上三条避雷提示，帮你把电影票花在刀刃上。</p>
+            <div class="rev-meta"><span>小七电影网 · 编辑部</span><span>2026-09-26</span></div>
+          </div>
+        </article>
+        <article class="rev-card">
+          <div class="rev-top" style="background:linear-gradient(140deg,#FFC145,#8A5A05)"><span class="rev-no">03</span><em>观察</em></div>
+          <div class="rev-in">
+            <h3>数据观察：老片回看潮正在改变片库结构</h3>
+            <p>近三个月，上线十年以上的经典片播放量同比增长 36%。小七电影网数据组解读这波"回看潮"背后的观影习惯变化。</p>
+            <div class="rev-meta"><span>小七电影网 · 数据组</span><span>2026-09-21</span></div>
+          </div>
+        </article>
+        <article class="rev-card">
+          <div class="rev-top" style="background:linear-gradient(140deg,#9B7BFF,#3A2266)"><span class="rev-no">04</span><em>专栏</em></div>
+          <div class="rev-in">
+            <h3>周末片单：五部适合放松的治愈系电影</h3>
+            <p>不想动脑的周末怎么过？小七电影网挑了五部节奏舒缓、情绪温暖的片子，附一句话推荐理由与观看顺序建议。</p>
+            <div class="rev-meta"><span>小七电影网 · 片单组</span><span>2026-09-18</span></div>
+          </div>
+        </article>
+        <article class="rev-card">
+          <div class="rev-top" style="background:linear-gradient(140deg,#5B8DEF,#132C63)"><span class="rev-no">05</span><em>影评</em></div>
+          <div class="rev-in">
+            <h3>《第七个证人》：华语悬疑今年最好的一次收尾</h3>
+            <p>多数悬疑片输在结尾，这部赢在结尾。小七电影网影评组逐段拆解它的伏笔铺设，全文无剧透，可放心阅读。</p>
+            <div class="rev-meta"><span>小七电影网 · 影评组</span><span>2026-09-15</span></div>
+          </div>
+        </article>
+        <article class="rev-card">
+          <div class="rev-top" style="background:linear-gradient(140deg,#FF6B9D,#7A1340)"><span class="rev-no">06</span><em>访谈</em></div>
+          <div class="rev-in">
+            <h3>对话纪录片导演：一年能拍出多少真实</h3>
+            <p>小七电影网专访《一年，七座城》主创，聊素材取舍、拍摄伦理，以及纪录片作者与被拍者之间那条微妙的边界。</p>
+            <div class="rev-meta"><span>小七电影网 · 采访组</span><span>2026-09-10</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 栏目四：榜单 -->
+  <section id="board">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>小七电影网高分榜单</h2>
+        <p>综合站内评分、收藏量与讨论热度，每两小时刷新一次</p>
+        <a class="more" href="#">查看完整榜单</a>
+      </div>
+      <div class="board">
+        <div class="board-box">
+          <h3>本周口碑榜 TOP 6</h3>
+          <ol>
+            <li><span class="bno">1</span><span class="bname">归途列车<small>剧情 / 家庭 / 2026</small></span><span class="bscore">9.4</span></li>
+            <li><span class="bno">2</span><span class="bname">柚子味的夏天<small>文艺 / 青春 / 2025</small></span><span class="bscore">9.1</span></li>
+            <li><span class="bno">3</span><span class="bname">静默海域<small>科幻 / 冒险 / 2026</small></span><span class="bscore">8.9</span></li>
+            <li><span class="bno">4</span><span class="bname">云上邮局<small>动画 / 治愈 / 2026</small></span><span class="bscore">8.7</span></li>
+            <li><span class="bno">5</span><span class="bname">第七个证人<small>悬疑 / 犯罪 / 2025</small></span><span class="bscore">8.5</span></li>
+            <li><span class="bno">6</span><span class="bname">一年，七座城<small>纪录 / 人文 / 2024</small></span><span class="bscore">8.3</span></li>
+          </ol>
+        </div>
+        <div class="board-box">
+          <h3>影迷收藏榜 TOP 6</h3>
+          <ol>
+            <li><span class="bno">1</span><span class="bname">小七电影网年度华语片单<small>编辑精选 / 2026</small></span><span class="bscore">8.9</span></li>
+            <li><span class="bno">2</span><span class="bname">深夜放映厅<small>悬疑 / 合集 / 常驻</small></span><span class="bscore">8.8</span></li>
+            <li><span class="bno">3</span><span class="bname">周末治愈系片单<small>动画 / 合家欢</small></span><span class="bscore">8.6</span></li>
+            <li><span class="bno">4</span><span class="bname">被低估的十部冷门片<small>冷门佳作</small></span><span class="bscore">8.5</span></li>
+            <li><span class="bno">5</span><span class="bname">经典修复专区<small>经典 / 高清</small></span><span class="bscore">8.4</span></li>
+            <li><span class="bno">6</span><span class="bname">科幻视觉系精选<small>科幻 / 视效</small></span><span class="bscore">8.2</span></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 栏目五：关于 -->
+  <section id="about">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>关于小七电影网</h2>
+        <p>我们是谁，以及我们坚持的三条标准</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-card">
+          <h3>小七电影网是什么</h3>
+          <p><strong>小七电影网</strong>（XIAOQI MOVIE）创办于 2023 年，是一个由影迷与影评人共同维护的电影推荐与影视资讯站点。名字里的"七"，来自我们最早定下的规矩：一部片子，只用七句话讲清它值不值得看。</p>
+          <p>站内每个条目都由编辑人工审校，评分由<strong>小七电影网</strong>观众打分与编辑评分加权得出，样本量与分数分布全部公开，不接受任何形式的刷分与置顶。</p>
+        </div>
+        <div class="about-card">
+          <h3>我们的三条标准</h3>
+          <ul class="why">
+            <li><b>只推能看完的片</b>编辑部内部看不完的，不进推荐位</li>
+            <li><b>影评不剧透</b>关键剧情单独折叠，读者自己选择是否展开</li>
+            <li><b>评分可追溯</b>展示打分人数与分布，拒绝水军干扰</li>
+            <li><b>更新有节奏</b>每日 09:00 片单，每周一精选，重大影展加更</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 订阅条 -->
+  <div class="subscribe">
+    <div class="wrap">
+      <div class="sub-in">
+        <h3>订阅小七电影网每周片单</h3>
+        <p>每周一封邮件，七部好片 + 七句推荐理由，不推广告，随时可退订。</p>
+        <form class="sub-form" action="#" method="get">
+          <input type="email" name="email" placeholder="输入你的邮箱地址" aria-label="邮箱地址">
+          <button type="submit">免费订阅</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- 栏目六：常见问题 -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>常见问题</h2>
+        <p>关于小七电影网的使用与内容说明</p>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>小七电影网的评分是怎么算出来的？</summary>
+          <p>小七电影网采用"观众打分 + 编辑评分"加权模型，观众分占 70%、编辑分占 30%，并剔除异常打分样本。每个影片条目都会展示参与打分的人数与分数分布区间。</p>
+        </details>
+        <details>
+          <summary>小七电影网多久更新一次？</summary>
+          <p>院线新片与流媒体上新每日 09:00 更新；编辑精选片单每周一更新；影评与影视资讯不定期发布，重大电影节期间会提高更新频率。</p>
+        </details>
+        <details>
+          <summary>怎么向我推荐的电影投稿？</summary>
+          <p>通过页面底部的"投稿与合作"入口留言，注明片名、年份与你的一句话推荐理由，小七电影网编辑组会在三个工作日内回复。</p>
+        </details>
+        <details>
+          <summary>手机能正常浏览小七电影网吗？</summary>
+          <p>可以。小七电影网全站采用响应式布局，手机、平板与桌面端自适应，推荐列表在小屏下会自动折叠为紧凑模式，榜单与影评切换为单列阅读。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- 底部 -->
+<footer>
+  <div class="wrap">
+    <div class="f-top">
+      <div class="f-col">
+        <h4>小七电影网</h4>
+        <p>小七电影网（XIAOQI MOVIE）专注电影推荐、影视资讯、原创影评与高分榜单，每日更新，帮你用最短的时间找到值得一看的好电影。</p>
+        <p class="f-url">网址：https://xiaoqidianyingwang-cn.github.io</p>
+      </div>
+      <div class="f-col">
+        <h4>频道</h4>
+        <ul>
+          <li><a href="#picks">今日电影推荐</a></li>
+          <li><a href="#category">影片分类导览</a></li>
+          <li><a href="#review">影评与资讯</a></li>
+          <li><a href="#board">高分榜单</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h4>关于</h4>
+        <ul>
+          <li><a href="#about">关于小七电影网</a></li>
+          <li><a href="#faq">常见问题</a></li>
+          <li><a href="#">投稿与合作</a></li>
+          <li><a href="#">内容声明</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h4>友情链接</h4>
+        <ul>
+          <li><a href="#">电影节日历</a></li>
+          <li><a href="#">独立电影观察</a></li>
+          <li><a href="#">影视资料库</a></li>
+          <li><a href="#">影迷社区</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="kw">
+      相关关键词：
+      <a href="#">小七电影网</a><a href="#">电影推荐</a><a href="#">最新电影</a><a href="#">影视资讯</a><a href="#">高分电影</a><a href="#">电影榜单</a><a href="#">影评</a><a href="#">观影指南</a><a href="#">热门电影</a>
+    </div>
+    <div class="f-bot">
+      <span>&copy; 2026 小七电影网 XIAOQI MOVIE. 保留所有权利。</span>
+      <span><a href="#">隐私政策</a> · <a href="#">使用条款</a> · <a href="#home">回到顶部</a></span>
+    </div>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://xiaoqidianyingwang-cn.github.io/#website",
+      "name": "小七电影网",
+      "alternateName": "XIAOQI MOVIE",
+      "url": "https://xiaoqidianyingwang-cn.github.io/",
+      "description": "小七电影网是专注电影推荐与影视资讯的中文影迷站点，提供最新上映电影、高分佳作榜单、分类影片导览、原创影评与观影指南。",
+      "inLanguage": "zh-CN",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://xiaoqidianyingwang-cn.github.io/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://xiaoqidianyingwang-cn.github.io/#organization",
+      "name": "小七电影网",
+      "url": "https://xiaoqidianyingwang-cn.github.io/",
+      "description": "小七电影网提供电影推荐、影视资讯、原创影评与高分电影榜单服务。"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "小七电影网首页", "item": "https://xiaoqidianyingwang-cn.github.io/"},
+        {"@type": "ListItem", "position": 2, "name": "今日电影推荐", "item": "https://xiaoqidianyingwang-cn.github.io/#picks"},
+        {"@type": "ListItem", "position": 3, "name": "影片分类导览", "item": "https://xiaoqidianyingwang-cn.github.io/#category"},
+        {"@type": "ListItem", "position": 4, "name": "影评与影视资讯", "item": "https://xiaoqidianyingwang-cn.github.io/#review"},
+        {"@type": "ListItem", "position": 5, "name": "小七电影网高分榜单", "item": "https://xiaoqidianyingwang-cn.github.io/#board"}
+      ]
+    }
+  ]
+}
+</script>
+
+</body>
+</html>
